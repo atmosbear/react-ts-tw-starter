@@ -54,14 +54,14 @@ For one, the file must end with .test.ts or .test.tsx. And for the rest, you sho
 	root.render(<Start></Start>)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 5. run the install command. The last two are dependencies of tailwind. You can modify anything you'd like!: <br><br>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~Install command:~~~~~~~~
 	npm install --save react react-dom vite vitest typescript tailwindcss eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin @types/react @types/react-dom postcss autoprefixer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~Tailwind.config.cjs & postcss.config.cjs~~~
  6. create the tailwind.config.cjs and postcss.config.cjs with the command `npx tailwindcss init -p`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 7. and edit tailwind.config.js by doing this instead of the empty content array:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~tailwind.config.js~~~~~~~~~
   "content: [
     "./index.html",
     "./WHEREVERYOUPUTYOURSOURCES/**/*.{js,ts,jsx,tsx}",
@@ -75,7 +75,7 @@ For one, the file must end with .test.ts or .test.tsx. And for the rest, you sho
 	@import 'tailwindcss/utilities';
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 9. in package.json's scripts section, add 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~package.json scripts~~~~~~~~~~
 "start": "vite dev", "test": "npx vitest", "run once": "npx vitest run"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
