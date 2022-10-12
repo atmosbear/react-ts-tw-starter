@@ -1,10 +1,11 @@
 {
 	"files.exclude": {
+		// This keeps the folder nice and tidy within VSCode. :) You can comment these out to reveal them if you need them.
 		"node_modules": true,
 		".eslintrc": true,
 		".gitignore": true,
 		"index.css": true,
-		"package.json": true,
+		// "package.json": true,
 		"postcss.config.js": true,
 		"tailwind.config.js": true,
 		"tsconfig.json": true,

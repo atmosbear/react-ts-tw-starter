@@ -1,8 +1,34 @@
-HOW I CREATED MY OWN VERSION OF REACT SO THAT I COULD STOP RELYING ON CRA (aka how I created this repo)
->>> open a new blank folder in VSC
->>> run `npm init` and follow the prompt
->>> create an index html:
-``````````````````````````INDEX.HTML```````````````````````````
+# How do I use this thing?
+It's not bad, I promise! Just run these commands in the terminal while in the folder. 
+Don't be afraid to make a mistake, you can always re-clone this!
+### To install:
+> `npm install`
+### To run:
+> `npm start`
+### To test (with hot reloading):
+> `npm test`
+### To test once (without hot reloading):
+> `npm test-once`
+
+------------
+# FAQ
+### Q: Why?
+A: Because I felt it would be nice to optimize the structure to my liking instead of relying on create react app; CRA is just so bloated. Typescript already adds an extra 60 MB, I don't need all the dependencies that I won't use! For example, I don't enjoy the slowness of rollup, so Vite is just incredible.
+
+### Q: How do I make my own version of this with different dependencies and stuff because I don't want to use all of this?
+A: Instead of running `npm install vite vitest tailwindcss...` etc, run `npm install whatever-you-want-to-add`!
+
+### Q: How do I make tests with vitest?
+For one, the file must end with .test.ts or .test.tsx. And for the rest, you should check it out on their github!
+
+### Q: How did you make this?
+
+# HOW I CREATED MY OWN VERSION OF REACT SO THAT I COULD STOP RELYING ON CRA (aka how I created this repo)
+1. open a new blank folder in VSC
+2. run `npm init` and follow the prompt
+3. create an index html:
+
+~~~~~~~~~~~INDEX.HTML~~~~~~~~~
 	<!DOCTYPE html>
 
 	<head>
@@ -11,11 +37,11 @@ HOW I CREATED MY OWN VERSION OF REACT SO THAT I COULD STOP RELYING ON CRA (aka h
 	</head>
 
 	<body>
-		<div id="root">woohoo!</div>
+		<div id="root"></div>
 	</body>
-```````````````````````````````````````````````````````````````````````````
-and an Start.tsx (or whatever you named your SRC within the index.html):
-`````````````````````````Start.tsx``````````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4. and a Start.tsx (or whatever you named your SRC within the index.html):
+~~~~~~~~~~~Start.tsx~~~~~~~~~~~
 	/* eslint-disable */
 	import {createRoot} from "react-dom/client"
 	import React from "react"
@@ -26,29 +52,35 @@ and an Start.tsx (or whatever you named your SRC within the index.html):
 	}
 	const root = createRoot(document.getElementById("root"))
 	root.render(<Start></Start>)
-````````````````````````````````````````````````````````````````````````````
->>> run the install command:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5. run the install command. The last two are dependencies of tailwind. You can modify anything you'd like!: <br><br>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	npm install --save react react-dom vite vitest typescript tailwindcss eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin @types/react @types/react-dom postcss autoprefixer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 6. create the tailwind.config.cjs and postcss.config.cjs with the command `npx tailwindcss init -p`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-npm install --save react react-dom vite vitest typescript tailwindcss eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin @types/react @types/react-dom postcss autoprefixer
-
-^and any others you'd like!
->>> create the tailwind.config.cjs and postcss.config.cjs with the command `npx tailwindcss init -p`
-
->>> and edit tailwind.config.js by doing this instead of the empty content array:
+7. and edit tailwind.config.js by doing this instead of the empty content array:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   "content: [
     "./index.html",
     "./WHEREVERYOUPUTYOURSOURCES/**/*.{js,ts,jsx,tsx}",
   ],"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
->>> create a CSS file for your Start:
-````````````````````````Start.css``````````````````````````````
+8. create a CSS file for your Start:
+~~~~~~~~~~~Start.css~~~~~~~~~~~~~~
 	@import 'tailwindcss/base';
 	@import 'tailwindcss/components';
 	@import 'tailwindcss/utilities';
-````````````````````````````````````````````````````````````````````````````
->>> in package.json > scripts add `"start": "vite dev", "test": "npx vitest", "run once": "npx vitest run"`
->>> TS needs a config file; create it:
-````````````````````````tsconfig.json```````````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9. in package.json's scripts section, add 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"start": "vite dev", "test": "npx vitest", "run once": "npx vitest run"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+10. TS needs a config file; create it:
+~~~~~~~~~~~tsconfig.json~~~~~~~~~~~
 	{
 		"compilerOptions": {
 			"strictNullChecks": true,
@@ -67,9 +99,9 @@ npm install --save react react-dom vite vitest typescript tailwindcss eslint @ty
 			"./node_modules"
 		]
 	}
-````````````````````````````````````````````````````````````````````````````
->>> and lastly, we need a super big .eslintrc file! I love strict rules, so :)
-```````````````````````````.eslintrc````````````````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+11. and lastly, we need a super big .eslintrc file! I love strict rules, so :)
+~~~~~~~~~~~.eslintrc~~~~~~~~~~~.
 	{
 		"root": true,
 		"extends": [],
@@ -526,9 +558,6 @@ npm install --save react react-dom vite vitest typescript tailwindcss eslint @ty
 			}
 		]
 	}
-````````````````````````````````````````````````````````````````````````````
->>> run `npm start`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+12. run `npm start`
 Done!
-
--- creating tests with vitest --
-the file must end with .test.ts or .test.tsx
