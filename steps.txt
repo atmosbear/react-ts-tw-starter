@@ -1,4 +1,4 @@
-HOW TO CREATE YOUR OWN VERSION OF REACT SO THAT YOU CAN STOP RELYING ON CRA:
+HOW I CREATED MY OWN VERSION OF REACT SO THAT I COULD STOP RELYING ON CRA (aka how I created this repo)
 >>> open a new blank folder in VSC
 >>> run `npm init` and follow the prompt
 >>> create an index html:
@@ -68,7 +68,7 @@ npm install --save react react-dom vite vitest typescript tailwindcss eslint @ty
 		]
 	}
 ````````````````````````````````````````````````````````````````````````````
->>> and lastly, we need a super big .eslintrc file!
+>>> and lastly, we need a super big .eslintrc file! I love strict rules, so :)
 ```````````````````````````.eslintrc````````````````````````````````````
 	{
 		"root": true,
