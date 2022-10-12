@@ -12,11 +12,32 @@ Don't be afraid to make a mistake, you can always re-clone this!
 
 ------------
 # FAQ
+
+### Q: What's in this?
+A: In no particular order:
+VITE AND VITEST:
+- vite
+- vitest
+REACT:
+- react
+- react-dom
+ESLINT:
+- eslint
+TYPESCRIPT:
+- typescript
+- react-types
+- react-dom-types
+- typescript-eslint
+TAILWIND:
+- tailwindcss
+- postcss (needed for tailwind)
+- autoprefixer (needed for tailwind)
+
 ### Q: Why?
 A: Because I felt it would be nice to optimize the structure to my liking instead of relying on create react app; CRA is just so bloated. Typescript already adds an extra 60 MB, I don't need all the dependencies that I won't use! For example, I don't enjoy the slowness of rollup, so Vite is just incredible.
 
 ### Q: How do I make my own version of this with different dependencies and stuff because I don't want to use all of this?
-A: Instead of running `npm install vite vitest tailwindcss...` etc, run `npm install whatever-you-want-to-add`!
+A: Instead of running `npm install vite vitest tailwindcss...` etc, run `npm install whatever-you-want-to-add`! Or, if you want to do it from scratch, see the next section.
 
 ### Q: How do I make tests with vitest?
 For one, the file must end with .test.ts or .test.tsx. And for the rest, you should check it out on their github!
