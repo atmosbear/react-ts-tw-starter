@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"strictNullChecks": true,
+		"esModuleInterop": true,
+		"alwaysStrict": true,
+		"jsx": "react",
+		"allowJs": false
+	},
+	"include": [
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.js",
+		"**/*.jsx"
+	],
+	"exclude": [
+		"./node_modules"
+	]
+}
