@@ -14,21 +14,21 @@ Don't be afraid to make a mistake, you can always re-clone this!
 # FAQ
 
 ### Q: What's in this?
-A: In no particular order:
-VITE AND VITEST:
+A: In no particular order, and in coherent parts so you can remove whatever you don't want:
+#### VITE AND VITEST:
 - vite
 - vitest
-REACT:
+#### REACT:
 - react
 - react-dom
-ESLINT:
+#### ESLINT:
 - eslint
-TYPESCRIPT:
+#### TYPESCRIPT:
 - typescript
 - react-types
 - react-dom-types
 - typescript-eslint
-TAILWIND:
+#### TAILWIND:
 - tailwindcss
 - postcss (needed for tailwind)
 - autoprefixer (needed for tailwind)
