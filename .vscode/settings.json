@@ -5,7 +5,7 @@
 		".eslintrc": true,
 		".gitignore": true,
 		"index.css": true,
-		// "package.json": true,
+		"package.json": true,
 		"postcss.config.js": true,
 		"tailwind.config.js": true,
 		"tsconfig.json": true,
