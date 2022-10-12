@@ -33,6 +33,9 @@ A: In no particular order, and in coherent parts so you can remove whatever you 
 - postcss (needed for tailwind)
 - autoprefixer (needed for tailwind)
 
+### Q: Why are the typescript settings so strict?
+A: Because I'm curious as to what happens if I'm forced to type EVERYTHING instead of doing the inference method. I came from Java and Python where I enjoyed using types, so I just want to see. :)
+
 ### Q: Why?
 A: Because I felt it would be nice to optimize the structure to my liking instead of relying on create react app; CRA is just so bloated. Typescript already adds an extra 60 MB, I don't need all the dependencies that I won't use! For example, I don't enjoy the slowness of rollup, so Vite is just incredible.
 
@@ -40,16 +43,16 @@ A: Because I felt it would be nice to optimize the structure to my liking instea
 A: Instead of running `npm install vite vitest tailwindcss...` etc, run `npm install whatever-you-want-to-add`! Or, if you want to do it from scratch, see the next section.
 
 ### Q: How do I make tests with vitest?
-For one, the file must end with .test.ts or .test.tsx. And for the rest, you should check it out on their github!
+A: For one, the file must end with .test.ts or .test.tsx. And for the rest, you should check it out on their github!
 
 ### Q: How did you make this?
+A: See below!
 
 # HOW I CREATED MY OWN VERSION OF REACT SO THAT I COULD STOP RELYING ON CRA (aka how I created this repo)
 1. open a new blank folder in VSC
 2. run `npm init` and follow the prompt
 3. create an index html:
-
-~~~~~~~~~~~INDEX.HTML~~~~~~~~~
+~~~
 	<!DOCTYPE html>
 
 	<head>
@@ -60,9 +63,9 @@ For one, the file must end with .test.ts or .test.tsx. And for the rest, you sho
 	<body>
 		<div id="root"></div>
 	</body>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~
 4. and a Start.tsx (or whatever you named your SRC within the index.html):
-~~~~~~~~~~~Start.tsx~~~~~~~~~~~
+~~~
 	/* eslint-disable */
 	import {createRoot} from "react-dom/client"
 	import React from "react"
@@ -73,35 +76,35 @@ For one, the file must end with .test.ts or .test.tsx. And for the rest, you sho
 	}
 	const root = createRoot(document.getElementById("root"))
 	root.render(<Start></Start>)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~
 5. run the install command. The last two are dependencies of tailwind. You can modify anything you'd like!: <br><br>
-~~~~~~~~Install command:~~~~~~~~
+~~~
 	npm install --save react react-dom vite vitest typescript tailwindcss eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin @types/react @types/react-dom postcss autoprefixer
-~~Tailwind.config.cjs & postcss.config.cjs~~~
- 6. create the tailwind.config.cjs and postcss.config.cjs with the command `npx tailwindcss init -p`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+~~~
+ 6. create the tailwind.config.cjs and postcss.config.cjs with the command:
+ ~~~
+ `npx tailwindcss init -p`
+~~~
 7. and edit tailwind.config.js by doing this instead of the empty content array:
-~~~~~~~~tailwind.config.js~~~~~~~~~
+~~~
   "content: [
     "./index.html",
     "./WHEREVERYOUPUTYOURSOURCES/**/*.{js,ts,jsx,tsx}",
   ],"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+~~~
 8. create a CSS file for your Start:
-~~~~~~~~~~~Start.css~~~~~~~~~~~~~~
+~~~
 	@import 'tailwindcss/base';
 	@import 'tailwindcss/components';
 	@import 'tailwindcss/utilities';
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~
 9. in package.json's scripts section, add 
-~~~~~~~~~package.json scripts~~~~~~~~~~
+~~~
 "start": "vite dev", "test": "npx vitest", "run once": "npx vitest run"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~
 
 10. TS needs a config file; create it:
-~~~~~~~~~~~tsconfig.json~~~~~~~~~~~
+~~~
 	{
 		"compilerOptions": {
 			"strictNullChecks": true,
@@ -579,6 +582,6 @@ For one, the file must end with .test.ts or .test.tsx. And for the rest, you sho
 			}
 		]
 	}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~
 12. run `npm start`
 Done!
