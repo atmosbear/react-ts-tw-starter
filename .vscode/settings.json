@@ -9,5 +9,6 @@
 		"postcss.config.js": true,
 		"tailwind.config.js": true,
 		"tsconfig.json": true,
+		"package-lock.json": true,
 	}
 }
